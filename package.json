@@ -4,8 +4,9 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-        "prestart": "npx eslint .",
-        "pre-copy": "cd .. && npm run  copy.lib base-baileys-memory",
+        "prebuild": "npx eslint .",
+        "build": "npm run copy.lib base-baileys-memory && echo 'Build completed.'",
+        "prestart": "npm run build",
         "start": "node app.js"
     },
     "keywords": [],
@@ -16,6 +17,7 @@
         "@bot-whatsapp/portal": "latest",
         "@bot-whatsapp/provider": "latest",
         "@whiskeysockets/baileys": "6.5.0",
+        "axios": "^1.6.2",
         "cache-manager": "5.2.4",
         "wa-sticker-formatter": "4.4.4"
     },

@@ -1,16 +1,17 @@
 const { createBot, createProvider, createFlow, addKeyword } = require('@bot-whatsapp/bot')
-
+const axios= require('axios')
 const QRPortalWeb = require('@bot-whatsapp/portal')
 const BaileysProvider = require('@bot-whatsapp/provider/baileys')
 const MockAdapter = require('@bot-whatsapp/database/mock')
+
 setInterval(async () => {
   try {
     console.log('setInterval para que no se duerma el servidor en render');
-
+    await axios.get(`https://whatsappbot-juntate.onrender.com/`);
   } catch (error) {
     console.log('Error: ', error)
   }
-}, 60000);
+}, 30000);
 
 
 const flowJuntate = addKeyword('juntate')
